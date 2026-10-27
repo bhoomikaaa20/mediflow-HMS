@@ -41,6 +41,49 @@ Each staff member signs in and gets a **dashboard built for their role**. A pati
 
 ---
 
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/login.png" alt="Login and sign-up screen"/><br/>
+      <b>Login / Sign Up</b><br/>
+      <sub>Staff sign in and are routed to the dashboard for their role</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/receptionist-dashboard.png" alt="Receptionist dashboard"/><br/>
+      <b>Receptionist Dashboard</b><br/>
+      <sub>Register patients, apply the 15-day free-revisit rule, send to a doctor</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/doctor-dashboard.png" alt="Doctor dashboard"/><br/>
+      <b>Doctor Dashboard</b><br/>
+      <sub>Personal queue, patient history, diagnosis and prescription</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/pharmacist-dashboard.png" alt="Pharmacist dashboard"/><br/>
+      <b>Pharmacist Dashboard</b><br/>
+      <sub>Prescription view, bill builder and medicine inventory</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/invoice.png" alt="Generated PDF invoice"/><br/>
+      <b>PDF Invoice</b><br/>
+      <sub>Downloaded automatically when billing is completed</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/admin-dashboard.png" alt="Admin dashboard"/><br/>
+      <b>Admin Dashboard</b><br/>
+      <sub>OP and pharmacy revenue KPIs with paginated patient history</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## ✨ Features
 
 ### 🧑‍💼 Receptionist
