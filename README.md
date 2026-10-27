@@ -270,14 +270,7 @@ npm run dev        # http://localhost:8080
 - Generated **PDF invoices in the browser**, with no server-side rendering needed.
 - Kept the API **fully typed** with TypeScript on both ends.
 
-## 🛣 Roadmap
 
-- [ ] Role-based authorisation on every route (not just authentication)
-- [ ] Deduct medicine stock automatically at billing and add low-stock alerts
-- [ ] Move the API base URL into an environment variable (`VITE_API_URL`)
-- [ ] Revenue trend charts on the admin dashboard (data already returned as `revenueByDate`)
-- [ ] Appointment scheduling and SMS / WhatsApp notifications
-- [ ] Unit and E2E tests (Vitest and Playwright are already configured)
 
 ---
 
