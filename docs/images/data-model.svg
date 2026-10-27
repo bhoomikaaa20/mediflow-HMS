@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1200" height="560" rx="16" fill="#f5f9f8"/>
+  <text x="600" y="44" text-anchor="middle" font-size="24" font-weight="700" fill="#1d2b33">Data Model (MongoDB collections)</text>
+
+  <!-- relationship lines (drawn first, behind cards) -->
+  <g stroke="#8fa3aa" stroke-width="2" fill="none" stroke-dasharray="6 4">
+    <path d="M300 170 H 450"/>              <!-- Patient -> Visit -->
+    <path d="M750 170 H 900"/>              <!-- User -> Visit -->
+    <path d="M600 262 V 330"/>              <!-- Visit -> Consultation -->
+    <path d="M300 200 C 380 200, 380 400, 450 400"/>  <!-- Patient -> Consultation -->
+    <path d="M900 240 C 830 240, 830 410, 750 410"/>  <!-- User(doctor) -> Consultation -->
+    <path d="M160 262 V 330"/>              <!-- Patient -> Bill -->
+    <path d="M450 450 H 300"/>              <!-- Consultation -> Bill -->
+  </g>
+  <g font-size="12" fill="#5b6b73" font-style="italic">
+    <text x="375" y="160" text-anchor="middle">1 : N</text>
+    <text x="825" y="160" text-anchor="middle">doctor 1 : N</text>
+    <text x="612" y="300">1 : 1</text>
+    <text x="172" y="300">1 : N</text>
+    <text x="375" y="440" text-anchor="middle">1 : N</text>
+  </g>
+
+  <g font-size="14" fill="#33434b">
+    <!-- Patient -->
+    <rect x="20" y="80" width="280" height="182" rx="12" fill="#fff" stroke="#2f9e85" stroke-width="2"/>
+    <rect x="20" y="80" width="280" height="40" rx="12" fill="#2f9e85"/><rect x="20" y="108" width="280" height="12" fill="#2f9e85"/>
+    <text x="160" y="107" text-anchor="middle" font-weight="700" fill="#fff" font-size="17">Patient</text>
+    <text x="36" y="146">patient_id  <tspan fill="#7a8a90">String · P001 (unique)</tspan></text>
+    <text x="36" y="170">name · age · gender</text>
+    <text x="36" y="194">phone  <tspan fill="#7a8a90">lookup key</tspan></text>
+    <text x="36" y="218">status  <tspan fill="#7a8a90">NEW | PRESCRIBED | …</tspan></text>
+    <text x="36" y="242">createdAt / updatedAt</text>
+
+    <!-- Visit -->
+    <rect x="450" y="80" width="300" height="182" rx="12" fill="#fff" stroke="#2a8fd6" stroke-width="2"/>
+    <rect x="450" y="80" width="300" height="40" rx="12" fill="#2a8fd6"/><rect x="450" y="108" width="300" height="12" fill="#2a8fd6"/>
+    <text x="600" y="107" text-anchor="middle" font-weight="700" fill="#fff" font-size="17">Visit</text>
+    <text x="466" y="146">patient_id  <tspan fill="#7a8a90">→ Patient</tspan></text>
+    <text x="466" y="170">doctor_id  <tspan fill="#7a8a90">→ User</tspan></text>
+    <text x="466" y="194">status  <tspan fill="#7a8a90">NEW→WAITING→IN_PROGRESS→…</tspan></text>
+    <text x="466" y="218">payment_required  <tspan fill="#7a8a90">Boolean</tspan></text>
+    <text x="466" y="242">payment_mode  <tspan fill="#7a8a90">CASH | ONLINE | null</tspan></text>
+
+    <!-- User -->
+    <rect x="900" y="80" width="280" height="182" rx="12" fill="#fff" stroke="#7a5bd6" stroke-width="2"/>
+    <rect x="900" y="80" width="280" height="40" rx="12" fill="#7a5bd6"/><rect x="900" y="108" width="280" height="12" fill="#7a5bd6"/>
+    <text x="1040" y="107" text-anchor="middle" font-weight="700" fill="#fff" font-size="17">User</text>
+    <text x="916" y="146">username</text>
+    <text x="916" y="170">email  <tspan fill="#7a8a90">unique</tspan></text>
+    <text x="916" y="194">password  <tspan fill="#7a8a90">bcrypt hash</tspan></text>
+    <text x="916" y="218">role  <tspan fill="#7a8a90">receptionist | doctor |</tspan></text>
+    <text x="960" y="240" fill="#7a8a90">pharmacist</text>
+
+    <!-- Consultation -->
+    <rect x="450" y="330" width="300" height="182" rx="12" fill="#fff" stroke="#e59a1b" stroke-width="2"/>
+    <rect x="450" y="330" width="300" height="40" rx="12" fill="#e59a1b"/><rect x="450" y="358" width="300" height="12" fill="#e59a1b"/>
+    <text x="600" y="357" text-anchor="middle" font-weight="700" fill="#fff" font-size="17">Consultation</text>
+    <text x="466" y="396">patient_id · visit_id · doctor_id</text>
+    <text x="466" y="420">diagnosis</text>
+    <text x="466" y="444">prescription[]</text>
+    <text x="480" y="466" fill="#7a8a90">{ medicineName, quantity }</text>
+    <text x="466" y="490">notes</text>
+
+    <!-- Bill -->
+    <rect x="20" y="330" width="280" height="200" rx="12" fill="#fff" stroke="#d6544a" stroke-width="2"/>
+    <rect x="20" y="330" width="280" height="40" rx="12" fill="#d6544a"/><rect x="20" y="358" width="280" height="12" fill="#d6544a"/>
+    <text x="160" y="357" text-anchor="middle" font-weight="700" fill="#fff" font-size="17">Bill</text>
+    <text x="36" y="396">patient_id · consultation_id</text>
+    <text x="36" y="420">items[]</text>
+    <text x="50" y="442" fill="#7a8a90">{ name, qty, price, total }</text>
+    <text x="36" y="466">consultation_fee</text>
+    <text x="36" y="490">total_amount  <tspan fill="#7a8a90">server-computed</tspan></text>
+    <text x="36" y="514">payment_mode  <tspan fill="#7a8a90">CASH|UPI|CARD</tspan></text>
+
+    <!-- Medicine -->
+    <rect x="900" y="330" width="280" height="120" rx="12" fill="#fff" stroke="#3f8f3a" stroke-width="2"/>
+    <rect x="900" y="330" width="280" height="40" rx="12" fill="#3f8f3a"/><rect x="900" y="358" width="280" height="12" fill="#3f8f3a"/>
+    <text x="1040" y="357" text-anchor="middle" font-weight="700" fill="#fff" font-size="17">Medicine</text>
+    <text x="916" y="396">name  <tspan fill="#7a8a90">unique</tspan></text>
+    <text x="916" y="420">price · quantity (stock)</text>
+
+    <!-- Counter -->
+    <rect x="900" y="466" width="280" height="64" rx="12" fill="#fff" stroke="#9aa8ae" stroke-width="2" stroke-dasharray="5 3"/>
+    <text x="916" y="492" font-weight="700">Counter</text>
+    <text x="916" y="516" fill="#7a8a90">atomic $inc → sequential patient IDs</text>
+  </g>
+</svg>

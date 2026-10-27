@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6b73"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="520" rx="16" fill="#f5f9f8"/>
+  <text x="600" y="44" text-anchor="middle" font-size="24" font-weight="700" fill="#1d2b33">System Architecture</text>
+
+  <!-- Client -->
+  <rect x="40" y="80" width="340" height="400" rx="14" fill="#ffffff" stroke="#2a8fd6" stroke-width="2"/>
+  <text x="210" y="114" text-anchor="middle" font-size="19" font-weight="700" fill="#1f6fb8">Client · React 18 + Vite</text>
+  <g font-size="14" fill="#33434b">
+    <rect x="62" y="134" width="296" height="44" rx="8" fill="#eef6fd"/>
+    <text x="78" y="161">AuthProvider (JWT in localStorage)</text>
+    <rect x="62" y="188" width="296" height="44" rx="8" fill="#eef6fd"/>
+    <text x="78" y="215">RoleRouter → dashboard per role</text>
+    <rect x="62" y="242" width="296" height="104" rx="8" fill="#eef6fd"/>
+    <text x="78" y="266" font-weight="600">Dashboards</text>
+    <text x="78" y="290">Reception · Doctor</text>
+    <text x="78" y="312">Pharmacist · Admin</text>
+    <text x="78" y="334">TanStack Query for fetching/caching</text>
+    <rect x="62" y="356" width="296" height="44" rx="8" fill="#eef6fd"/>
+    <text x="78" y="383">shadcn/ui · Tailwind · Radix · Sonner</text>
+    <rect x="62" y="410" width="296" height="44" rx="8" fill="#eef6fd"/>
+    <text x="78" y="437">jsPDF + autoTable invoice generator</text>
+  </g>
+
+  <!-- API -->
+  <rect x="440" y="80" width="380" height="400" rx="14" fill="#ffffff" stroke="#2f9e85" stroke-width="2"/>
+  <text x="630" y="114" text-anchor="middle" font-size="19" font-weight="700" fill="#1f7f6d">Server · Node.js + Express 5 (TS)</text>
+  <g font-size="14" fill="#33434b">
+    <rect x="462" y="134" width="336" height="44" rx="8" fill="#e9f6f2"/>
+    <text x="478" y="161">CORS · JSON body · dotenv config</text>
+    <rect x="462" y="188" width="336" height="44" rx="8" fill="#e9f6f2"/>
+    <text x="478" y="215"><tspan font-weight="600">protect</tspan> middleware — verifies Bearer JWT</text>
+    <rect x="462" y="242" width="336" height="214" rx="8" fill="#e9f6f2"/>
+    <text x="478" y="266" font-weight="600">REST routes → controllers</text>
+    <g font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f7f6d">
+      <text x="478" y="292">/api/auth</text>
+      <text x="478" y="314">/api/patients</text>
+      <text x="478" y="336">/api/visits</text>
+      <text x="478" y="358">/api/doctors</text>
+      <text x="478" y="380">/api/consultations</text>
+      <text x="478" y="402">/api/medicines</text>
+      <text x="478" y="424">/api/bills</text>
+      <text x="478" y="446">/api/admin</text>
+    </g>
+    <g font-size="13">
+      <text x="640" y="292">signup · login</text>
+      <text x="640" y="314">register · list</text>
+      <text x="640" y="336">send to doctor</text>
+      <text x="640" y="358">queue · history</text>
+      <text x="640" y="380">prescriptions</text>
+      <text x="640" y="402">catalogue</text>
+      <text x="640" y="424">billing</text>
+      <text x="640" y="446">KPIs · history</text>
+    </g>
+  </g>
+
+  <!-- DB -->
+  <rect x="880" y="80" width="280" height="400" rx="14" fill="#ffffff" stroke="#3f8f3a" stroke-width="2"/>
+  <text x="1020" y="114" text-anchor="middle" font-size="19" font-weight="700" fill="#2f7a2b">MongoDB · Mongoose</text>
+  <g font-size="14" fill="#33434b">
+    <ellipse cx="1020" cy="150" rx="80" ry="14" fill="#e6f3e4" stroke="#3f8f3a"/>
+    <rect x="940" y="150" width="160" height="70" fill="#e6f3e4"/>
+    <line x1="940" y1="150" x2="940" y2="220" stroke="#3f8f3a"/><line x1="1100" y1="150" x2="1100" y2="220" stroke="#3f8f3a"/>
+    <ellipse cx="1020" cy="220" rx="80" ry="14" fill="#e6f3e4" stroke="#3f8f3a"/>
+    <text x="1020" y="194" text-anchor="middle" font-weight="600">Collections</text>
+    <g text-anchor="middle">
+      <text x="1020" y="270">Users</text>
+      <text x="1020" y="296">Patients</text>
+      <text x="1020" y="322">Visits</text>
+      <text x="1020" y="348">Consultations</text>
+      <text x="1020" y="374">Medicines</text>
+      <text x="1020" y="400">Bills</text>
+      <text x="1020" y="426">Counters</text>
+    </g>
+    <text x="1020" y="460" text-anchor="middle" font-size="12" fill="#6b7a80">Aggregation pipelines for revenue</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#5b6b73" stroke-width="2.5" marker-end="url(#a)" marker-start="url(#a)">
+    <line x1="384" y1="280" x2="436" y2="280"/>
+    <line x1="824" y1="280" x2="876" y2="280"/>
+  </g>
+  <text x="410" y="268" text-anchor="middle" font-size="12" fill="#5b6b73">HTTPS</text>
+  <text x="410" y="300" text-anchor="middle" font-size="12" fill="#5b6b73">JSON</text>
+  <text x="850" y="268" text-anchor="middle" font-size="12" fill="#5b6b73">ODM</text>
+</svg>
